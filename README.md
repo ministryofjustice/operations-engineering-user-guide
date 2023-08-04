@@ -5,7 +5,7 @@ user guides](https://user-guides.operations-engineering.service.justice.gov.uk/#
 
 This repository utilises the Ministry of Justice's [template-documentation-site](https://github.com/ministryofjustice/template-documentation-site).
 
->Want to give feedback on the documentation? [Open an issue on this repository](https://github.com/ministryofjustice/operations-engineering-user-guide/issues).
+> Want to give feedback on the documentation? [Open an issue on this repository](https://github.com/ministryofjustice/operations-engineering-user-guide/issues).
 
 ## Running locally
 
