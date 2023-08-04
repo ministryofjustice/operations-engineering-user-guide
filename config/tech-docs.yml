@@ -5,12 +5,12 @@ host: https://user-guides.operations-engineering.service.justice.gov.uk
 
 # Header-related options
 show_govuk_logo: false
-service_name: Operations Engineering User Guides
+service_name: Operations Engineering User Guide
 service_link: /
 
 # Links to show on right-hand-side of header
 header_links:
-  GitHub: https://github.com/ministryofjustice/operations-engineering-user-guides
+  GitHub: https://github.com/ministryofjustice/operations-engineering-user-guide
 
 # Enables search functionality. This indexes pages only and is not recommended for single-page sites.
 enable_search: true
@@ -30,5 +30,5 @@ max_toc_heading_level: 3
 prevent_indexing: true
 
 show_contribution_banner: true
-github_repo: ministryofjustice/operations-engineering-user-guides
+github_repo: ministryofjustice/operations-engineering-user-guide
 github_branch: main

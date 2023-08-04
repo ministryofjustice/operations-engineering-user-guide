@@ -1,11 +1,11 @@
-# Operations Engineering User Guides
+# Operations Engineering User Guide
 
 This repository holds the website and user guides for services and tools provided by the Operations Engineering team [Operations Engineering
-user guides](https://user-guides.operations-engineering.service.justice.gov.uk/#operations-engineering-user-guides)
+user guides](https://user-guides.operations-engineering.service.justice.gov.uk/#operations-engineering-user-guide)
 
 This repository utilises the Ministry of Justice's [template-documentation-site](https://github.com/ministryofjustice/template-documentation-site).
 
->Want to give feedback on the documentation? [Open an issue on this repository](https://github.com/ministryofjustice/operations-engineering-user-guides/issues).
+>Want to give feedback on the documentation? [Open an issue on this repository](https://github.com/ministryofjustice/operations-engineering-user-guide/issues).
 
 ## Running locally
 
