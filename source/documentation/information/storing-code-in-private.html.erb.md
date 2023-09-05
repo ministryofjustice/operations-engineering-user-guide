@@ -4,6 +4,7 @@ title: Storing Code in Private Repositories
 last_reviewed_on: 2023-09-05
 review_in: 3 months
 ---
+
 # Storing Code in Private and Internal Repositories: A Do's and Don'ts Guide
 
 ### Introduction
@@ -31,6 +32,7 @@ If the code makes clear details of a policy that has not yet been announced, you
 Start sharing your code and data from the beginning of your project to encourage collaboration, clearer documentation, and a more maintainable codebase. [be and use open by default]
 
 ####  ✅ Implement Security Measures for Sensitive Data
+
 Ensure clarity around data that needs to remain protected and implement measures to achieve security. [be and use open by default]
 
 #### ✅ Separate Secrets from Source Code
@@ -99,15 +101,16 @@ You can follow [this guide](https://docs.github.com/en/authentication/keeping-yo
 
 Some other considerations:
 
-* Evaluate readiness to engage with the broader community and the possibility of external contributions.
-* Ensure all stakeholders are aligned on the decision to move from private/internal to public.
-* As the repository will become part of MoJ's public domain, you may need to re-evaluate its standards compliance.
+- Evaluate readiness to engage with the broader community and the possibility of external contributions.
+- Ensure all stakeholders are aligned on the decision to move from private/internal to public.
+- As the repository will become part of MoJ's public domain, you may need to re-evaluate its standards compliance.
 
 More information can be found in [this guide](https://technical-guidance.service.justice.gov.uk/documentation/standards/storing-source-code.html).
 
 ### References
 
 - [Be open and use open source](https://www.gov.uk/guidance/be-open-and-use-open-source)
+
 * [How to Make Source Code Open and Reusable](https://www.gov.uk/government/publications/open-source-guidance/when-code-should-be-open-or-closed)
 * [Technology Code of Practice (TCoP)](https://www.gov.uk/guidance/the-technology-code-of-practice#be-open-and-use-open-source)
 * [GitHub Guidelines for ministryofjustice](https://operations-engineering.service.justice.gov.uk/documentation/services/moj-github.html#ministry-of-justice-uk-github-enterprise-management)
