@@ -7,7 +7,7 @@ review_in: 3 months
 
 # Services We Don't Manage
 
-This is a list (not comprehensive) of common requests we recieve for services that are not supported by Operations Engineering.  Please contact the teams listed below if you need help with any of the following:
+This is a list (not comprehensive) of common requests we recieve for services that are not supported by Operations Engineering. Please contact the teams listed below if you need help with any of the following:
 
 ## Analytical Platform related requests
 
