@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: github-pages-test
-          path: artifact-test.tar
+          path: artifact.tar
           retention-days: 1
 
   url-check:
@@ -46,7 +46,7 @@ jobs:
       - name: Unpack files and check URL links
         run: |
           cd github-pages-test
-          tar -xvf artifact-test.tar
+          tar -xvf artifact.tar
           npm install linkinator
           npx linkinator . --recurse --markdown \
             --skip https://groups.google.com/* \
