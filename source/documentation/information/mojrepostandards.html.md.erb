@@ -1,7 +1,7 @@
 ---
 owner_slack: "#operations-engineering-alerts"
 title: MoJ Repository Standards
-last_reviewed_on: 2023-11-01
+last_reviewed_on: 2023-11-20
 review_in: 6 months
 ---
 
@@ -11,7 +11,7 @@ The Ministry of Justice uses GitHub repository standards to ensure high-quality 
 
 Our GitHub repository standards have specific criteria that a repository must meet to be considered compliant. Here's a brief explanation of what the standards are:
 
-1. **Administrators require review**: Admins must review all changes before they are merged into the main branch. This helps ensure that changes are thoroughly reviewed for potential issues.
+1. **Administrators require review**: Setting enabled so that repository Admins can't bypass branch protection rules. This prevents direct pushes to the main branch, helping to maintain the integrity of our codebase.
 
 2. **Default branch main**: The default branch should be named 'main'. This naming convention is a recent standard in the industry that we follow for consistency across projects.
 
