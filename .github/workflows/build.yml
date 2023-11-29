@@ -24,6 +24,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          fail: true
+          args: --verbose --exclude-mail --no-progress './**/*.md' './**/*.html' './**/*.erb' --accept 403,200,429
       - name: Compile Markdown to HTML and create artifact
         run: |
           /scripts/deploy.sh
@@ -33,31 +38,3 @@ jobs:
           name: github-pages-test
           path: artifact.tar
           retention-days: 1
-
-  url-check:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download a Build Artifact from build
-        uses: actions/download-artifact@v3
-        with:
-          name: github-pages-test
-          path: github-pages-test
-      - name: Unpack files and check URL links
-        run: |
-          cd github-pages-test
-          tar -xvf artifact.tar
-          npm install linkinator
-          npx linkinator . --recurse --markdown \
-            --skip https://groups.google.com/* \
-            --skip https://github.com/ministryofjustice/dns \
-            --skip https://github.com/ministryofjustice/moj-ip-addresses \
-            --skip https://github.com/ministryofjustice/mta-sts \
-            --skip https://user-guide.operations-engineering.service.justice.gov.uk/images/govuk-large.png \
-            --skip https://ministryofjustice.github.io/template-documentation-site/images/govuk-large.png \
-            --skip https://operations-engineering.service.justice.gov.uk/images/govuk-large.png \
-            --skip https://github.com/ministryofjustice/operations-engineering/issues/* \
-            --skip https://drive.google.com/file/d/1eYCm5PqpsQXKQdT_XhNi-wbH4976t9M5/view?usp=sharing \
-            --skip https://github.com/ministryofjustice/data-platform-support/issues/new/choose \
-          # "URL Check will fail on private and internal GitHub repositories"
-
