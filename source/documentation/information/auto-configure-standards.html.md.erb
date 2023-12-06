@@ -1,27 +1,38 @@
 ---
 owner_slack: "#operations-engineering-alerts"
 title: Automatically configure GitHub Repository Standards
-last_reviewed_on: 2023-11-27
+last_reviewed_on: 2023-12-06
 review_in: 3 months
 ---
 
 # Automatically configure GitHub Repository Standards
 
-There are a set of [standards](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html) that all GitHub repositories inside the Ministry of Justice GitHub Organisations should abide by.
+There is a set of
+[standards](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html)
+that are a recommended baseline of best practices for GitHub repositories.
 
 ## What does the automation do?
 
-Operations Engineering maintains automation that can configure and maintain these standards for you.
+The automation runs periodically looking for the "standards-compliant" topic on a repository.
 
-Standards the automation configures:
+If the repository contains this topic, the automation will apply the following configuration:
 
-- Default Branch Protection
-- Enforce Admins
-- Required Review Count
-- Dismiss Stale Reviews
+### Apply Branch Protection on _"main"_
+
+> Your default branch should be configured to _"main"_ as per
+our [Inclusive Language Guidance](https://technical-guidance.service.justice.gov.uk/documentation/standards/using-inclusive-language.html#using-inclusive-language)
+
+- Enforce admins
+- Set required review count to 1 _*This will be set even if the current review count is greater than 1_
+- Dismiss stale reviews
+
+The automation will also maintain any `required checks` that may have been pre-configured manually.
+
+### Apply Repository Standards
+
 - Enable Issues
 
-Standards the automation does not currently configure:
+### Standards the automation does not currently configure:
 
 - Description set
 - License
@@ -46,11 +57,11 @@ In order to disable the automation for a given GitHub repository, follow these s
 
 ## When does the automation run?
 
-Currently the automation runs at 6am every day and can be run manually [here](https://github.com/ministryofjustice/operations-engineering/actions/workflows/configure-standards.yml)
+Currently, the automation runs at 6am every day and can be run
+manually [here](https://github.com/ministryofjustice/operations-engineering/actions/workflows/configure-standards.yml)
 
-## Things to note
+## Having Trouble?
 
-A few things to note if enabling the automation:
-
-- It will overwrite any changes you make that go against the standards
-- If new standards are added, it will automatically attempt to configure them
+If you run into any issues when applying the automation, we're always looking for ways to improve! So feel free to get
+in touch via our Slack channel [#ask-operations-engineering](https://mojdt.slack.com/archives/C01BUKJSZD4) or email us
+at [Operations Engineering](mailto:operations-engineering@digital.justice.gov.uk)
