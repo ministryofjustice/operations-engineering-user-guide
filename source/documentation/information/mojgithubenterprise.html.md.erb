@@ -1,47 +1,118 @@
 ---
 owner_slack: "#operations-engineering-alerts"
-title: MoJ GitHub Enterprise Management
+title: GitHub
 last_reviewed_on: 2023-10-04
 review_in: 6 months
 ---
 
-# MoJ GitHub Enterprise Management
+# GitHub
 
-The Operations Engineering team proudly manages the [Ministry of Justice GitHub Enterprise](https://github.com/enterprises/ministry-of-justice-uk). We maintain and support our enterprise instance, which includes several organisations:
+## Enterprise Account
+
+The Operations Engineering team manages
+the [Ministry of Justice GitHub Enterprise](https://github.com/enterprises/ministry-of-justice-uk). We maintain and
+support our enterprise instance, which includes several organisations:
 
 - [Ministry of Justice](https://github.com/ministryofjustice)
 - [MoJ Analytical Services](https://github.com/moj-analytical-services)
-- [ministryofjustice-test](https://github.com/ministryofjustice-test)
-- [Criminal Injuries Compensation Authority](https://github.com/CriminalInjuriesCompensationAuthority)
+- [Criminal Injuries Compensation Authority](https://github.com/CriminalInjuriesCompensationAuthority) *
+  *_though it sits within the Enterprise Account, this organisation is not managed by Operations Engineering_*
 
-## Why We Use GitHub
+### Actions Quota for Private and Internal Repositories
 
-GitHub is a powerful tool for software development and collaboration. Here's why we use it:
+> The Ministry of Justices' GitHub Enterprise account reserves the following usage quotas for GitHub Actions (per
+month):
+>
+> - **50,000** Minutes
+> - **50GB** Storage
 
-- Version Control: GitHub is built on Git, which tracks changes to our code over time. This ensures that every revision is documented, and we can revert to an older version if necessary.
+The quota renews at the start of each month and is a shared quota across all private and internal repositories in
+MoJs GitHub Enterprise account.
 
-- Collaboration: GitHub's collaborative features make it easy for our teams to work together, regardless of their physical location. Developers can contribute to projects, review code, and discuss changes.
+Teams are responsible for actively managing their usage of actions for private and internal repositories. Reaching these
+limits means that the service will be unavailable for private and internal repositories until the next reset.
 
-- Integration: GitHub integrates well with many popular tools in the development ecosystem, allowing us to build efficient and flexible workflows.
+_**These limits do not apply to public repositories.**_
+
+If you are considering making your repository public, consider reading the technical guidance
+on [converting private or internal repositories to public](https://technical-guidance.service.justice.gov.uk/documentation/standards/storing-source-code.html#private-repositories)
+and
+our [Dos and Don't Guide for Public Repositories](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/storing-code-in-public.html).
+
+## Access Management
+
+Operations Engineering is responsible for granting access to both the Ministry of Justice and the MoJ Analytical
+Services Organisations.
+
+### Joining Ministry of Justice/MoJ Analytical Services Organisation
+
+If you require access to these organisations, you can contact us via our Slack
+channel [#ask-operations-engineering](https://mojdt.slack.com/archives/C01BUKJSZD4) or email us
+at [Operations Engineering](mailto:operations-engineering@digital.justice.gov.uk).
+
+> You must provide an email address that we can send the invitation to. We only allow access to the following
+pre-approved email addresses:
+>
+> - @cica.gov.uk
+> - @digital.justice.gov.uk
+> - @ima-citizensrights.org.uk
+> - @judicialappointments.gov.uk
+> - @judiciary.uk
+> - @justice.gov.uk
+> - @ppo.gov.uk
+> - @publicguardian.gov.uk
+> - @sentencingcouncil.gov.uk
+> - @yjb.gov.uk
+
+If you do not have a GitHub account, the invitation you receive will prompt you to create one before joining the
+organisation.
+
+If you already have a GitHub account and wish to use it for work, you should add your work email as
+your [primary email](https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/changing-your-primary-email-address)
+address in GitHub.
+
+### Single Sign On (SSO) for Ministry of Justice Organisation
+
+If you have a `@digital.justice.gov.uk` and only require access to the Ministry of Justice Organisation, you can use
+[SSO](https://github.com/orgs/ministryofjustice/sso) to gain access via your Google Workspace account.
+
+### Third-Party Supplier Management
+
+If you are a Third-Party Supplier who is maintaining code on behalf of the Ministry of Justice, you will need to be
+added as
+an [Outside Collaborator](https://technical-guidance.service.justice.gov.uk/documentation/standards/storing-source-code.html#outside-collaborator).
+
+Outside Collaborators will only be able to gain access to specific repositories.
+
+If you require access/need to give access to an Outside Collaborator, raise an issue or pull request in the relevant
+repository for the organisation below:
+
+- Ministry of
+  Justice = [ministryofjustice/github-collaborators](https://github.com/ministryofjustice/github-collaborators)
+- MoJ Analytical
+  Services = [moj-analytical-services/github-outside-collaborators](https://github.com/moj-analytical-services/github-outside-collaborators)
 
 ## Our Services and Support
 
 As the custodians of these GitHub organisations, our team is responsible for the following:
 
-- **Access Management:** We handle user access control, ensuring the right people have access to the right resources.
-
-- **Third-Party Collaborator Management:** We vet and [manage collaborations with third-party developers](https://technical-guidance.service.justice.gov.uk/documentation/standards/storing-source-code.html#outside-collaborator), safeguarding the integrity of our projects.
-
 - **Team Management:** Where teams lack a maintainer, we step in to manage team dynamics and operations.
 
-- **Third-Party Application and Integration Approval:** We review and approve requests to integrate third-party apps, keeping our tech ecosystem secure and efficient.
+- **Third-Party Application and Integration Approval:** We review and approve requests to integrate third-party apps,
+  keeping our tech ecosystem secure and efficient.
 
-- **Fine-Grained Personal Access Token Requests:** We oversee the approval of such requests, ensuring secure and proper usage of GitHub.
+- **Fine-Grained Personal Access Token Requests:** We oversee the approval of such requests, ensuring secure and proper
+  usage of GitHub.
 
-- **Repository Compliance:** We check that all repositories align with the [MoJ GitHub Repository Standards](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html#github-repository-standards-in-the-ministry-of-justice).
+- **Repository Compliance:** We check that all repositories align with
+  the [MoJ GitHub Repository Standards](https://user-guide.operations-engineering.service.justice.gov.uk/documentation/information/mojrepostandards.html#github-repository-standards-in-the-ministry-of-justice).
 
-- **Repository Templates Management:** We provide and manage templates for repositories, promoting best practices and consistency across projects.
+- **Repository Templates Management:** We provide and manage templates for repositories, promoting best practices and
+  consistency across projects.
 
 - **Enterprise Support:** We liaise with GitHub to resolve any issues and to get support for our enterprise instance.
 
-- **Account Automation:** We automate account management tasks like archiving inactive users and repositories, maintaining a clean and efficient workspace.
+- **Account Automation:** We automate account management tasks like archiving inactive users and repositories,
+  maintaining a clean and efficient workspace.
+
+
