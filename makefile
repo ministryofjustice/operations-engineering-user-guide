@@ -21,3 +21,10 @@ check:
 		-v $$(pwd)/config:/app/config \
 		-v $$(pwd)/source:/app/source \
 		-it $(IMAGE) /scripts/check-url-links.sh
+
+
+# Rule to rename .html.md.erb to .html.md
+rename-md-erb:
+	@find . -type f -name '*.html.md.erb' -exec sh -c 'mv "$$0" "$${0%.erb}"' {} \;
+
+.PHONY: rename-md-erb

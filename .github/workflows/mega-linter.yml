@@ -36,6 +36,10 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0 # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to improve performances
 
+      # Ensure all files have the correct file extension
+      - name: Rename .html.md.erb to .html.md
+        run: make rename-md-erb
+
       # MegaLinter
       - name: MegaLinter
         id: ml
