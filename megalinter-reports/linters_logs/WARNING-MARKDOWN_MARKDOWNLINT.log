@@ -1,0 +1,8 @@
+Results of markdownlint linter (version 0.38.0)
+See documentation on https://megalinter.io/7.7.0/descriptors/markdown_markdownlint/
+-----------------------------------------------
+
+❌ [ERROR] for workspace /github/workspace
+Linter raw log:
+source/documentation/services/1password.html.md.erb:8 MD025/single-title/single-h1 Multiple top-level headings in the same document [Context: "# What is 1Password?"]
+
