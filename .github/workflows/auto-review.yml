@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "source/**"
+        - spelling
 
 env:
   PR_OWNER: ${{ github.event.pull_request.user.login }}
