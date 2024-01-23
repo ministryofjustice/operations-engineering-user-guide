@@ -1,40 +1,45 @@
 ---
 owner_slack: "#operations-engineering-alerts"
-title: DockerHub and Docker Desktop
-last_reviewed_on: 2023-12-04
-review_in: 6 months
+title: DockerHub and Docker Desktop Usage Guidelines
+last_reviewed_on: 2024-01-23
+review_in: 3 months
 ---
 
-# MoJ DockerHub Account
+# DockerHub Account Management
 
-Operations Engineering owns the [Ministry of Justice DockerHub account](https://hub.docker.com/orgs/ministryofjustice), and associated user licences for Docker Desktop.
+The Operations Engineering team manages the Ministry of Justice (MoJ) DockerHub account, which includes the administration of user licenses for Docker Desktop.
 
-**Docker Desktop** is a desktop client for running Docker containers etc - NB you must have a licensed Docker account
+## Overview of Tools
 
-**DockerHub** is a Docker image repository
+- **Docker Desktop**: This is a desktop application for managing and running Docker containers.
 
-## Licensed Docker accounts
+Note: A licensed Docker account is required to use Docker Desktop for MoJ-related tasks.
 
-To use Docker Desktop as part of your MOJ work, you need to be licensed. This means you must have a Docker account in the ministryofjustice Docker organisation - see: (Registering with the MOJ DockerHub)[registering-with-the-moj-dockerhub]
+- **DockerHub**: DockerHub serves as a repository for Docker images.
 
-## Registering with the MOJ DockerHub
+## License Requirements for Docker Accounts
 
-We have configured the ministrofjustice organisation to automatically add as members those who use GitHub SSO and have a digital.justice.gov.uk email address.
+For any MoJ work involving Docker Desktop, a licensed Docker account is mandatory. Employees must be affiliated with the MoJ DockerHub organisation.
 
-To register, browse to <https://hub.docker.com/> and sign up with your digital.justice.gov.uk email. You will be taken through an Auth0 flow where you will be asked to authenticate with GitHub. Once that is complete you will automatically be a member of the [ministryofjustice Docker organisation](https://hub.docker.com/orgs/ministryofjustice).
+## How to Register with MoJ DockerHub
 
-Add a name that is based on your actual name. This will ensure that your account can be identified as part of the Joiners, Movers and Leavers Process (JML).
+The "ministryofjustice" DockerHub organisation is set to automatically include members who sign in using GitHub single-sign-on (SSO) with a digital.justice.gov.uk email. Follow these steps to register:
 
-If you have a DockerHub account that you would like to continue using, make sure your digital.justice.gov.uk email is listed on that account. When you go through the SSO process, the accounts will be merged.
+1. Visit [DockerHub](https://hub.docker.com/) and sign up using your digital.justice.gov.uk email.
+2. Follow SSO authentication process linked to your GitHub account.
+3. Upon completion, you'll be added to the [ministryofjustice Docker organization](https://hub.docker.com/orgs/ministryofjustice).
 
-> Your GitHub account must have the digital.justice.gov.uk email address as its primary email address.
+Please use a name close to your actual name for easier identification during the Joiners, Movers, and Leavers Process (JML).
 
-## Sign in
+If you have an existing DockerHub account you wish to use, ensure it's linked to your digital.justice.gov.uk email. The SSO process will integrate your existing account with the MoJ organization.
 
-Sign in from <https://hub.docker.com/> or the Docker Desktop app, then select 'GitHub' to use SSO.
+Reminder: Your GitHub account must use your digital.justice.gov.uk email as the primary email.
 
-## Support
+## Logging In
 
-If you are having trouble completing sign-in with SSO in Docker Desktop, note that it requires version 4.4.2 at minimum for the process to work.
+To log in, access DockerHub via [this link](https://hub.docker.com/) or through the Docker Desktop app. Choose 'GitHub' for SSO authentication.
 
-If you have any issues please contact #ask-operations-engineering slack channel.
+## Support and Troubleshooting
+
+- Docker Desktop requires version 4.4.2 or later for SSO compatibility.
+- For any issues, reach out to #ask-operations-engineering on Slack.
