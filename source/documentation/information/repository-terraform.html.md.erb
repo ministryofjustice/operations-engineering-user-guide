@@ -21,7 +21,7 @@ Create a branch. On your new branch add a '.tf' file to the 'terraform/github/re
 
 'example-repo.tf':
 
-'''markdown
+```
     module "example-repo" {
         source  = "ministryofjustice/repository/github"
         version = "0.0.4"
@@ -30,6 +30,6 @@ Create a branch. On your new branch add a '.tf' file to the 'terraform/github/re
         application_name = "example-repo"
         description = "This is an example of how to define a repository in Terraform"
     }
-'''
+```
 
 Push your changes to the remote repository and raise a PR. The PR will inititate a Terraform plan showing how your changes will affect the Terraform state. On merging into the main branch, the changes will be applied to the Terraform state and your repository will be created in the 'ministryofjustice' Github organization. 
