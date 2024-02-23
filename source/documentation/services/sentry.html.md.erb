@@ -18,24 +18,25 @@ tool for digital products.
 
 > The Ministry of Justices' Sentry enterprise account reserves the following usage quotas (per month):
 >
-> - 30Million [Transactions](https://docs.sentry.io/product/performance/transaction-summary/#what-is-a-transaction)
-> - 4Million Errors
-> - 1Gb of Attachments
+> - 30 Million [Transactions](https://docs.sentry.io/product/performance/transaction-summary/#what-is-a-transaction)
+> - 4 Million Errors
+> - 1 Gb of Attachments
+> - 500 Replays
 >
-> The quota renews on the 14th of each month and is a shared quota across all the projects in Sentry.
+> The quota renews on the 14th of each month and is shared across all projects in Sentry.
 
-Teams are responsible for actively managing their Sentry usage. We have provided [Quota Management](#quota-management)
-guidance around how to manage your teams Sentry usage, to ensure teams get the most value from Sentry.
+Teams are responsible for actively managing their Sentry usage. We provide [Quota Management](#quota-management)
+guidance to ensure teams get the most value from Sentry.
 
 Our Sentry plan also includes [performance monitoring].
 
 ### Error Spike Protection
 The Operations Engineering team have enabled
-the [Spike Protection](https://docs.sentry.io/product/accounts/quotas/spike-protection/) feature on an organisational
+the [Spike Protection](https://docs.sentry.io/product/accounts/quotas/spike-protection/) feature at an organisational
 level.
 
-Sentry uses an algorithm to keep track of ***normal*** error consumption per project. When there is abnormal amount of
-errors within a project, Sentry will dynamically rate limit the project accordingly.
+Sentry uses an algorithm to keep track of ***normal*** error consumption per project. When an abnormal amount of
+errors occurs within a project, Sentry dynamically rate limits the project accordingly.
 
 The purpose of enabling Spike Protection is to prevent an abnormally high volume of errors unnecessarily consuming a
 large portion of the error quota that may have been caused by an intermittent network issue. This also helps in ensure
@@ -52,9 +53,11 @@ application transactions and errors that are sent to Sentry. See Sentry's [Advan
 redact sensitive information before it is saved in Sentry.
 
 ## Quota Management
-If a quota is exceeded, all further transactions or errors are dropped by Sentry until the next monthly renewal. To
-prevent exceeding the quota's, teams should actively manage their usage of Sentry to ensure they are getting the most
-value for their consumption. This section details some best practices to help.
+If a quota is exceeded then no further usage in that category is available until the next monthly renewal.
+For example, if the Error or Transaction quota is consumed then any further errors or transactions sent to
+Sentry are dropped. Similarly, if the Replay quota is consumed, no further replays are available. To
+prevent exceeding the quota, teams should actively manage their usage of Sentry to ensure they are getting the most
+value for their consumption and not unnecessarily impacting others. This section details some best practices.
 
 ### Error Rate Limiting
 Rate limiting is the best way to manage the error consumption of your project. The feature allows you to define how
@@ -121,6 +124,11 @@ endpoints `/ping`,`/ping.json`,`/health`,`/health.json`,`/status/**`,`/robots.tx
 Ignoring specific endpoints (or drastically reducing their sampling rates) can be implemented within the application
 code. See the [Example Project Configurations](#example-project-configurations) for a recommended starting point in your
 SDK.
+
+### Replays
+
+Replays or [Session Replays](https://docs.sentry.io/product/session-replay/) are video-like reproductions of a user session.
+These are a Sentry guidance on how to [Manage Your Replay Quota](https://docs.sentry.io/product/accounts/quotas/manage-replay-quota/).
 
 ## Example Project Configurations
 
