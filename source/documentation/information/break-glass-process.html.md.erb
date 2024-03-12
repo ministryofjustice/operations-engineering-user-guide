@@ -1,0 +1,125 @@
+---
+owner_slack: '#operations-engineering-alerts'
+title: Break Glass Process
+last_reviewed_on: 2024-03-12
+review_in: 3 months
+---
+
+# Break Glass Process
+
+**Purpose**
+
+Operations Engineering are administrators of several tools and services that Ministry of Justice (MoJ) Digital staff and systems depend upon to perform their roles.
+
+Emergencies may require Operations Engineering to bypass normal processes to re-instate business as usual.
+
+Ideally, teams and business units have fail-safes for such circumstances in their estate and contacting Operations Engineering is used as a last resort.
+
+The purpose of this document is to ensure that Operations Engineering takes a fair, consistent and reliable approach to "breaking the glass" if and when required.
+
+**Audience**
+
+Operations Engineering's Break Glass Process may be something to be aware of if you are responsible for resources that are hosted in GitHub or AWS or use any tool administered by Operations Engineering to build and operate systems.
+
+Engaging with Operations Engineering before an emergency occurs to establish authorised parties and verification processes may help ensure a smoother process in emergencies for your team, service area or business unit.
+
+## Process
+
+This section details the step-by-step instructions that Operations Engineering will take when considering a break glass scenario.
+
+Since Operations Engineering is rarely in a position to know who should have access to what, we should only be involved in emergency scenarios or when all other options have been exhausted.
+
+### 1. Initial Checklist
+
+It is important to first understand the context of a request to assess whether it is appropriate and required for Operations Engineering to perform any actions.
+
+To ensure Operations Engineering is required to play a part in the resolution, requesters should ensure they have performed the following actions:
+
+- ✅ Contact the owner of the resource (if known) i.e. the maintainer(s) of a GitHub Team.
+- ✅ Raise the issue with your local team to ensure there isn't a local solution to your problem.
+- ✅ Raise the issue with your wider team/service area/business unit to increase awareness of the problem and ensure that a process is not already in place to resolve the issue.
+- ✅ Escalate the issue with your Product Manager/Service Owner/Leads/Principals to increase awareness of the problem and ensure that a process is not already in place to resolve the issue.
+
+If you have performed the above actions and still believe you require Operations Engineering assistance, below is a checklist of information that should be provided when requesting escalated privileges:
+
+- General description of the request -- Example: _"I need access to a GitHub Team"_
+- Description of why normal process cannot be followed to gain authorisation (include time scales if known) -- Example: _"The current maintainers of the GitHub Team are on leave until next week"_
+- Description of the business risk and impact -- Example: _"I will not be able to perform my daily job without access to the GitHub Team"_
+- The team, area and business unit you work within -- Example: _"Team A in the Secure Estate area within HMPPS"_
+- The team, area and business unit of the resources you require access to -- Example: _"Team B in the Secure Estate area within HMPPS"_
+- If known, provide the contact details of authorised parties -- Example _"john.smith@example.com is the Service Owner of the area which is responsible for the resources"_
+
+### 2. Verifying Information and Gaining Approval
+
+After gaining the initial information for a request, Operations Engineering will be in a good position to start assessing whether their enough justification to act.
+
+Operations Engineering will attempt to verify the validity of the information provided in the request. The methods Operations Engineering will use to validate information will naturally vary depending on the request, but below are some examples:
+
+- Reaching out to nominated, authorised parties and discussing the business risks, impacts and alternative options.
+- Identifying and reaching out to people in a similar area of the business to build context and confidence.
+- Asking you to re-raise the request using a more suitable method e.g. using your Slack account instead of a personal email.
+
+If Operations Engineering is confident that the request has been appropriately authorised by the resource owners and that there are no suitable alternatives, Operations Engineering may choose to act.
+
+If Operations Engineering is not confident of the context in which the request is being approved, Operations Engineering may choose to escalate the request internally.
+
+In some cases, this step may take days, weeks or months to complete. Engaging with Operations Engineering early as an owner of resources may help ensure a smoother process.
+
+During an emergency, there may already be approvals internally for breaking the glass for certain teams, service areas, business units or use cases - which may temporarily speed up this process.
+
+### 3. Breaking The Glass
+
+After gaining the appropriate approval and ensuring it is appropriate to enact a Break Glass Process, Operations Engineering will do the required work.
+
+Escalating user privilege will naturally vary depending on the request, but below are some examples of what escalation may look like:
+
+- Adding you as a maintainer to a GitHub Team where you were not a member/maintainer before.
+- Giving you access to an AWS account which you did not have access to before.
+- Giving you access to a 1Password Vault which you did not have access to before.
+
+## FAQs / Examples
+
+### What is a _"Break Glass Process"_?
+
+The term _"Break Glass"_ traditionally refers to the process of breaking the glass to pull a fire alarm, in an emergency.
+
+In IT, it typically refers to escalating user privileges outside of the normal day-to-day processes due to an emergency.
+
+This document serves as Operations Engineering's explicit process for escalating user privilege in emergencies.
+
+For some tools and services Operations Engineering are the administrators of, there are methods to identify the current owner/authorised parties.
+
+Identifying these individuals may be all you need, as they will have the permissions to give you access to the resource as well.
+
+Below are some examples of resources and how to identify the authorised parties.
+
+### How do I gain access to a GitHub Team?
+
+As a member of the Ministry of Justice GitHub Organisation, you can access the [GitHub Teams View](https://github.com/orgs/ministryofjustice/teams) and find and view the members of an individual team.
+
+If you require access to a specific team in GitHub, the authorised parties with the rights to add you to the team will be any team member labelled as a `Maintainer`.
+
+> GitHub Teams are often used to authorise an individual's access to certain systems, such as restricting access to namespaces in Cloud Platform or restricting which AWS accounts a user can access via SSO.
+
+If a team has no maintainers, raise this with your local team, service area, leads, principals and/or business unit to understand if there is another process for gaining access already implemented such as using Infrastructure as Code (IaC). If local options have been exhausted, then contact Operations Engineering to start the Break Glass Process.
+
+### How do I gain access to an AWS account?
+
+Most AWS account access is defined in code, in the publicly available [aws-root-account](https://github.com/ministryofjustice/aws-root-account) repository.
+
+The [/management-account/terraform/sso-admin-account-assignments.tf](https://github.com/ministryofjustice/aws-root-account/blob/main/management-account/terraform/sso-admin-account-assignments.tf) file relates GitHub Teams to different AWS Permission Sets for different AWS Accounts.
+
+If you require access to a specific AWS Account, find the GitHub Team in the list that contains the required Permissions Sets you need for the required AWS Account. You can then contact a `Maintainer` of the GitHub Team to be added to the team, which in turn will grant you access to the AWS Account.
+
+#### AWS Accounts Access Not Managed by GitHub Teams via `aws-root-account`
+
+If you cannot find the AWS account you require access to in the `aws-root-account` code, then you may fall into one of two scenarios:
+
+- Your AWS Account is a tenant of the Modernisation Platform.
+- Your AWS Account is fully managed in a localised way i.e. by an individual team in your service area/business unit.
+
+If you are a tenant of the Modernisation Platform, you can consult the [Modernisation Platform Documentation](https://user-guide.modernisation-platform.service.justice.gov.uk/) on how to gain access to the account (at the time of writing, [access is controlled via GitHub Teams](https://user-guide.modernisation-platform.service.justice.gov.uk/user-guide/accessing-the-aws-console.html#accessing-the-aws-console)).
+
+If your account is fully managed in a localised way, then there will be a custom method of gaining access to the account. You will need to speak to your service area, leads, principles and/or business unit to understand how this process is implemented. Ideally, accounts in this scenario should plan to migrate to the Modernisation Platform as soon as they are able, as stated in the Ministry of Justice [Hosting Strategy](https://technical-guidance.service.justice.gov.uk/documentation/standards/hosting.html).
+
+If your account is fully managed in a localised way and the implemented method of gaining access is no longer viable, then contact Operations Engineering to start the Break Glass Process.
