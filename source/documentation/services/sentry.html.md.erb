@@ -131,6 +131,27 @@ Replays or [Session Replays](https://docs.sentry.io/product/session-replay/) are
 Please see Sentry guidance on how to [Manage Your Replay Quota](https://docs.sentry.io/product/accounts/quotas/manage-replay-quota/)
 for further details.
 
+### Privacy Configuration
+
+Sentry.io by default, captures all the data sent by your application, potentially including sensitive user information.
+
+Sentry’s privacy features
+
+Sentry provides several features to control data access and privacy:
+
+Data Scrubbing:
+Automatically removes sensitive information from error messages and other captured data before it’s stored.
+
+Enhanced privacy mode:
+Limits the amount of data  displayed in alerts and notifications, restricting access to sensitive details.
+
+Permissions:
+Define granular permissions for user roles and teams within organisations, controlling access to specific data sets within the projects.
+
+IP Address Management:
+Control whether IP addresses are captured and stored. Disabling IP address storage can be crucial for user privacy.
+
+
 ## Example Project Configurations
 
 - [Express]
