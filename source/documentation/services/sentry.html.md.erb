@@ -1,7 +1,7 @@
 ---
 owner_slack: "#operations-engineering-alerts"
 title: Sentry.io
-last_reviewed_on: 2023-12-04
+last_reviewed_on: 2024-04-23
 review_in: 6 months
 ---
 
@@ -132,57 +132,44 @@ Sampling is a Sentry.io configuration option that controls the rate at which ses
 By default, session replay is turned off or set to a low sample rate to conserve resources and prevent Sentry.io quota limits from being surpassed too rapidly. However, some users may be tempted to increase the replay session sample rate in order to collect more sessions for analysis.
 
 There are two sample rates you can adjust to get the replays relevant to you:
-replaysSessionSampleRate - The sample rate for replays that begin recording immediately and last the entirety of the user's session.
-replaysOnErrorSampleRate - The sample rate for replays that are recorded when an error happens. This type of replay will record up to a minute of events prior to the error and continue recording until the session ends.
+`replaysSessionSampleRate` - The sample rate for replays that begin recording immediately and last the entirety of the user's session.
+`replaysOnErrorSampleRate` - The sample rate for replays that are recorded when an error happens. This type of replay will record up to a minute of events prior to the error and continue recording until the session ends.
 
-We recommend setting a replay session sample rate of 0.
+**We recommend setting a replay session sample rate of 0**. Setting anything other than 0 will result in capture of replays for any session, not just errors. For high transaction services, this will result in quick consumption of the monthly quota and result in no further replays being recorded during that period.
 
-Setting anything other than 0 will result in capture of replays for any session, not just errors. For high transaction services, this will result in quick consumption of the monthly quota and result in no further replays being recorded during that period.
+Service Teams should use `replaysOnErrorSampleRate` to set an appropriate sample rate of replays. In line with vendor recommendations, this should be between **0.1** and **0.2** (i.e, 10% to 20% of errors).
 
-Service Teams should use replaysOnErrorSampleRate to set an appropriate sample rate of replays. In line with vendor recommendations, this should be between 0.1 and 0.2 (i.e, 10% to 20% of errors).
-Refer to Sentry.io configuration guidance for more detail.
-Recommendation: Avoid enabling replays. SessionSampleRate:
+Refer to Sentry.io [configuration guidance](https://docs.sentry.io/platforms/javascript/session-replay/configuration/) for more detail.
 
-While increasing the replay  SessionSampleRate may appear to be a good way to learn more about user interactions, it might have serious consequences, particularly in terms of quota use. Enabling replays SessionSampleRate is not recommended for the following reasons
+While increasing the replay SessionSampleRate may appear to be a good way to learn more about user interactions, it might have serious consequences, particularly in terms of quota use. Enabling replays SessionSampleRate is not recommended for the following reasons
 
-Ignore certain Errors for Error Sampling
+### Ignore certain Errors for Error Sampling
 
-In addition to setting sample rates, you can also use the beforeErrorSampling callback to exclude types of errors that you are not interested in. This will ensure that replays are not captured for these types of errors.
+In addition to setting sample rates, you can also use the [beforeErrorSampling](https://docs.sentry.io/platforms/javascript/session-replay/understanding-sessions/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2F#ignore-certain-errors-for-error-sampling) callback to exclude types of errors that you are not interested in. This will ensure that replays are not captured for these types of errors.
 
-Replays and Privacy
+### Replays and Privacy
 
 Sentry's Session Replay is not an actual “screen” recording, but instead a recording of changes in the web browser's Document Object Model (DOM) (i.e., the data representation of the page). This important distinction means that the data captured by session Replay can be searched and stripped.
 
-For full details of Privacy and additional configuration, please refer to Sentry.io Protecting User Privacy in Session Replay guidance
-
-### Replays.
-
-Replays or [Session Replays](https://docs.sentry.io/product/session-replay/) are video-like reproductions of a user session.
-Please see Sentry guidance on how to [Manage Your Replay Quota](https://docs.sentry.io/product/accounts/quotas/manage-replay-quota/)
-for further details.
+For full details of Privacy and additional configuration, please refer to Sentry.io [Protecting User Privacy in Session Replay](https://docs.sentry.io/product/session-replay/protecting-user-privacy/) guidance.
 
 ### Privacy Configuration
 
 Sentry.io by default, captures all the data sent by your application, potentially including sensitive user information.
 
-Sentry’s privacy features
-
 Sentry provides several features to control data access and privacy:
 
-Data Scrubbing:
-Automatically removes sensitive information from error messages and other captured data before it’s stored.
+**Data Scrubbing** - Automatically removes sensitive information from error messages and other captured data before it’s stored.
 
-Enhanced privacy mode:
-Limits the amount of data  displayed in alerts and notifications, restricting access to sensitive details.
+**Enhanced privacy mode** - Limits the amount of data  displayed in alerts and notifications, restricting access to sensitive details.
 
-Permissions:
-Define granular permissions for user roles and teams within organisations, controlling access to specific data sets within the projects.
+**Permissions** - Define granular permissions for user roles and teams within organisations, controlling access to specific data sets within the projects.
 
-IP Address Management:
-Control whether IP addresses are captured and stored. Disabling IP address storage can be crucial for user privacy.
+**IP Address Management** - Control whether IP addresses are captured and stored. Disabling IP address storage can be crucial for user privacy.
 
+Full details can be found in the [Privacy Configuration Overview](https://sentry.io/security/).
 
-## Example Project Configurations
+### Example Project Configurations
 
 - [Express]
 - [Rails]
