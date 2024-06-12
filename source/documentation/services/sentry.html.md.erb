@@ -32,7 +32,7 @@ Our Sentry plan also includes [performance monitoring].
 
 ### Error Spike Protection
 The Operations Engineering team have enabled
-the [Spike Protection](https://docs.sentry.io/product/accounts/quotas/spike-protection/) feature at an organisational
+the [Spike Protection](https://docs.sentry.io/pricing/quotas/spike-protection/) feature at an organisational
 level.
 
 Sentry uses an algorithm to keep track of ***normal*** error consumption per project. When an abnormal amount of
@@ -70,7 +70,7 @@ worse case scenario regarding excessive error consumption.
 See the Sentry [Rate limiting] documentation to set up rate limiting for each project.
 
 Also see
-the [Setting Useful Rate Limits](https://docs.sentry.io/product/accounts/quotas/manage-event-stream-guide/#-how-to-set-proper-rate-limits)
+the [Setting Useful Rate Limits](https://docs.sentry.io/pricing/quotas/manage-event-stream-guide/#setting-useful-rate-limits)
 documentation to help create a suitable rate limit for your application.
 
 ### Removing/Ignoring Errors
@@ -181,8 +181,6 @@ assistance in setting up transaction filtering / rate limiting within your Sentr
 
 [Transactions]: https://docs.sentry.io/product/performance/transaction-summary/#what-is-a-transaction
 
-[Delete and Discard]: https://docs.sentry.io/product/accounts/quotas/manage-event-stream-guide/#:~:text=Delete%20%26%20Discard&text=If%20there%20is%20an%20irrelevant,filter%20out%20future%20matching%20events
-
 [Sentry.io]: https://sentry.io
 
 [MoJ GitHub Organization]: https://github.com/ministryofjustice
@@ -193,7 +191,7 @@ assistance in setting up transaction filtering / rate limiting within your Sentr
 
 [performance monitoring]: https://docs.sentry.io/product/performance/
 
-[Rate limiting]: https://docs.sentry.io/product/accounts/quotas/manage-event-stream-guide/#6-rate-limiting
+[Rate limiting]: https://docs.sentry.io/pricing/quotas/manage-event-stream-guide/#rate-limiting
 
 [Express]: https://github.com/ministryofjustice/hmpps-book-secure-move-frontend/blob/2ddc0684fb8b2e08642440899d56de8765e509da/server.js#L69-L97
 
@@ -201,7 +199,7 @@ assistance in setting up transaction filtering / rate limiting within your Sentr
 
 [Django]: https://github.com/ministryofjustice/cla_frontend/blob/51a6c5a05597384c780041dd810c9108c9b575bb/cla_frontend/settings/base.py#L57-L65
 
-[protecting User privacy in Session Replay]: https://docs.sentry.io/product/session-replay/protecting-user-privacy/
+[protecting User privacy in Session Replay]: https://docs.sentry.io/security-legal-pii/scrubbing/protecting-user-privacy/
 
 [Sampling]: https://docs.sentry.io/platforms/javascript/session-replay/?original_referrer=https%3A%2F%2Fdocs.sentry.io%2F#sampling
 
