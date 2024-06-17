@@ -4,3 +4,22 @@ title: GitHub Community Slack Channel
 last_reviewed_on: 2024-06-17
 review_in: 6 months
 ---
+
+# How to Create Organisation-Level Fine-Grained Tokens
+
+Organisation-level fine-grained tokens improve security by granting rights based on your requirements. Parts of producing and managing these tokens ensure safe and efficient access management in organisations.
+To configure a token, we need to provide key details like the token name and expiration date.
+Within your organisation’s settings, locate the security settings. This area will include options for managing tokens, such as viewing existing tokens, creating new ones, and setting specific permissions and scopes. The exact navigation might vary, but it generally involves accessing a "Security" or "API Tokens" section.
+When creating a new token, you will need to provide several key details
+
+Token Name: Choose a descriptive name that reflects the token's purpose.
+Expiry Date: Set an expiry date to limit the token’s validity period, enhancing security by ensuring tokens are not active indefinitely.
+Fine-grained tokens allow you to specify detailed permissions and scopes.
+
+Scopes: Determine the areas the token can access, such as read, write, or admin scopes. Each scope defines a level of access to different resources.
+
+Permissions: Fine-tune permissions within each scope to grant the precise level of access required. This granular control ensures that tokens have only the necessary permissions.
+Once configured, generate the token. Immediately copy and securely store the token string, as it is typically displayed only once. Use a secure method, such as a password manager or encrypted storage, to keep the token safe.
+Integrate the generated token into your application or workflows. Ensure that the token is transmitted securely, such as over HTTPS, to prevent interception. Regularly review and monitor token usage to detect any unusual or unauthorised activities.
+
+
