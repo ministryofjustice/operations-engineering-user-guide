@@ -1,0 +1,52 @@
+---
+owner_slack: "#operations-engineering-alerts"
+title: Creating Organisation-Level Fine-Grained Tokens for User Accounts: A Step-by-Step Guide
+last_reviewed_on: 2024-06-19
+review_in: 6 months
+---
+
+# How to Create Organisation-Level Fine-Grained Tokens.
+
+Organisation-level fine-grained tokens improve security by granting rights based on your requirements. Parts of producing and managing these tokens ensure safe and efficient access management in organisations.
+To configure a token, we need to provide key details like the token name and expiration date.
+
+Within your organisation’s settings, locate the security settings. This area will include options for managing tokens, such as viewing existing tokens, creating new ones, and setting specific permissions and scopes. The exact navigation might vary, but it generally involves accessing a "Security" or "API Tokens" section.
+
+When creating a new token, you will need to provide several key details
+
+Token Name: Choose a descriptive name that reflects the token's purpose.
+
+Expiry Date: Set an expiry date to limit the token’s validity period, enhancing security by ensuring tokens are not active indefinitely.
+
+Scopes: Determine the areas the token can access, such as read, write, or admin scopes. Each scope defines a level of access to different resources.
+
+Permissions: Fine-tune permissions within each scope to grant the precise level of access required. This granular control ensures that tokens have only the necessary permissions.
+
+Once configured, generate the token. Immediately copy and securely store the token string, as it is typically displayed only once. Use a secure method, such as a password manager or encrypted storage, to keep the token safe.
+
+Integrate the generated token into your application or workflows. Ensure that the token is transmitted securely, such as over HTTPS, to prevent interception. Regularly review and monitor token usage to detect any unusual or unauthorised activities.
+
+Please refer to https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token further information.
+
+
+# How to create fine-grained tokens for user accounts.
+
+An Organisation-level token gives broad access to the whole organisation, perfect for extensive integrations. A fine-grained user PAT offers specific permissions for individual users, enhancing security. Use an Org level token for wide tasks and a PAT for secure, user-specific actions.
+
+Creating fine-grained tokens for your account involves a few key actions that improve security and control over your account's access rights.
+
+To begin, go to your account's security or API settings, where you will normally find token management choices. When you select the option to generate a new token, you will be required to give the token a descriptive name so that you can identify its function later.
+
+Next, specify the scope of the token's access. This entails choosing specific rights from a menu of accessible options, such as read or write access to specific data sets or the ability to do specified operations within your account.
+
+To minimise security concerns, select only the permissions required for the token's intended use. After you've defined the permissions, you may need to use the token or specify an expiration date to limit its validity. Once all of the details have been defined, save the token.
+
+It is important that you securely retain the token value provided, as it will only be displayed once. If the token is lost or compromised, you must revoke it and create a new one.
+
+Following these procedures allows you to construct fine-grained tokens that give greater security and exact control.
+
+Our primary contact channel is #ask-operations-engineering](https://mojdt.slack.com/archives/C01BUKJSZD4).
+Please use this channel to contact the team, provide feedback on our services, or to request support from
+the Operations Engineering Team.
+
+You can also send email to: operations-engineering@digital.justice.gov.uk
