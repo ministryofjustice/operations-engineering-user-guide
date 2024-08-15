@@ -1,45 +1,63 @@
 ---
 owner_slack: "#operations-engineering-alerts"
 title: DockerHub and Docker Desktop Usage Guidelines
-last_reviewed_on: 2024-08-01
+last_reviewed_on: 2024-08-08
 review_in: 3 months
 ---
 
-# DockerHub Account Management
+# Docker
 
-The Operations Engineering team manages the Ministry of Justice (MoJ) DockerHub account, which includes the administration of user licenses for Docker Desktop.
+## Docker Business Subscription
 
-## Overview of Tools
+The Ministry of Justice have a Business Subcription with Docker which is centrally managed and paid for via the 
+Operations Engineering Team within Platfoms and Architecure.
 
-- **Docker Desktop**: This is a desktop application for managing and running Docker containers.
+The purpose of this is to firstly enable teams to easily publish, share and store images to faciliate modern CI/CD pipelines
+using containered applications with DockeHub. Secondly to enhance local development workflows when working with containerised
+applications with Docker Desktop.
 
-Note: A licensed Docker account is required to use Docker Desktop for MoJ-related tasks.
+### Quota
 
-- **DockerHub**: DockerHub serves as a repository for Docker images.
+> The Ministry of Justices' Docker Business Subscription reserves the following usage quotas:
+>
+> - 400 Seats/Licences
+>
 
-## License Requirements for Docker Accounts
+Teams are resonsible for managing any application level quotas such as Image Pull Rate Limit for Authenticated Users. More details 
+of quotas for Docker Business can be found on the [Docker Pricing Page](https://www.docker.com/pricing/).
 
-A licensed Docker account is mandatory for any MoJ work involving Docker Desktop. Employees must be affiliated with the MoJ DockerHub organisation.
+### Services
 
-## How to Register with MoJ DockerHub
+> The Ministry of Justices' Docker Business Subscription enables access to the following services:
+>
+> - [Ministry of Justice UK DockerHub Organisation](https://hub.docker.com/u/ministryofjustice)
+> - [Docker Desktop](https://www.docker.com/products/docker-desktop/) ⚠️ **Docker Desktop Legally Requires a Licence to be Used For MoJ Tasks** - please ensure you have signed into Docker Desktop with an account that has an MoJ licence 
 
-The "ministryofjustice" DockerHub organisation is set to automatically include members who sign in using GitHub single-sign-on (SSO) with a digital.justice.gov.uk email. Follow these steps to register:
+## User Access
 
-1. Visit [DockerHub](https://hub.docker.com/) and sign up using your digital.justice.gov.uk email.
-2. Follow the SSO authentication process linked to your GitHub account.
-3. Upon completion, you'll be added to the [ministryofjustice Docker organization](https://hub.docker.com/orgs/ministryofjustice).
+### `@digital.justice.gov.uk` Users
 
-Please use a name close to your actual name for easier identification during the Joiners, Movers, and Leavers Process (JML).
+Users signing up to DockerHub with an `@digital.justice.gov.uk` email will be automatically re-directed to complete a Signle
+Sign On (SSO) flow with GitHub. Your GitHub account must use your `@digital.justice.gov.uk` email as it's primary email to gain access.
 
-If you wish to use an existing DockerHub account, ensure it's linked to your digital.justice.gov.uk email. The SSO process will integrate your existing account with the MoJ organization.
+Once complete, you will be assigned a Docker Licence and will be able to access the [Ministry of Justice UK Docker Organisation](https://hub.docker.com/u/ministryofjustice)
 
-Reminder: Your GitHub account must use your digital.justice.gov.uk email as the primary email.
+### Bug With `@justice.gov.uk` Users
 
-## Logging In
+Users signing up to DockerHub with an `@justice.gov.uk` will be automatically re-directed to an SSO flow for HMCTS and will not be able to create an acccount in Docker
+with this email directly, unless your email is registered with the HMCTS Identity Provider.
 
-To log in, access DockerHub via [this link](https://hub.docker.com/) or through the Docker Desktop app. Choose 'GitHub' for SSO authentication.
+We are tracking the progress of the bug in this [GitHub Issue](https://github.com/ministryofjustice/operations-engineering/issues/4697).
+
+If you require access to the [Ministry of Justice UK DockerHub Organisation](https://hub.docker.com/u/ministryofjustice) we reccomend using your `@digital.justice.gov.uk` email.
+
+If using the `@digital.justice.gov.uk` is not an option complete the following steps:
+
+- Sign up to GitHub using your `@justice.gov.uk` email.
+- Sign up to DockerHub using GitHub SSO.
+- Contact #ask-operations-engineering to send you an invite to the organisation, providing your `@justice.gov.uk` email address.
 
 ## Support and Troubleshooting
 
-- To ensure compatibility with SSO, install Docker Desktop 4.4.2 or later.
 - If you have any issues, please reach out to #ask-operations-engineering on Slack.
+
