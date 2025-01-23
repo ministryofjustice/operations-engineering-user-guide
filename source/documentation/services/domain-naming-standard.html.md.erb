@@ -21,7 +21,7 @@ Please refer to [How to get, register or manage a domain name]
 ### `service.gov.uk`
 
 The [GOV.UK service manual]
-(https://www.gov.uk/service-manual/technology/get-a-domain-name) sets out when
+(<https://www.gov.uk/service-manual/technology/get-a-domain-name>) sets out when
 and how to get a `*.service.gov.uk` subdomain.
 
 In short, `*.service.gov.uk` subdomains are for public-facing services which
@@ -40,7 +40,7 @@ This includes:
 However, cloud-hosted software-as-a-service used by MOJ staff (like Google
 Workspace or Microsoft365), or on which MOJ has a corporate presence (like
 [GitHub](https://github.com/ministryofjustice) or [Trello]
-(https://trello.com/mojds/home)) are not required to be served from a
+(<https://trello.com/mojds/home>)) are not required to be served from a
 `*.service.justice.gov.uk` subdomain.
 
 #### Cloud Platform and Modernisation Platform
@@ -85,7 +85,7 @@ This pattern makes the relationships between domains clear, grouping
 environments by service and applications by shared environment.
 
 Non-production environments and [hosted prototypes]
-(https://www.gov.uk/service-manual/design/making-prototypes#sharing-code-prototypes)
+(<https://www.gov.uk/service-manual/design/making-prototypes#sharing-code-prototypes>)
 should also use authentication (such as HTTP basic auth) to prevent public
 users who come across them thinking they’re real.
 
@@ -94,7 +94,7 @@ clear to users which environment they’re in - but that’s more useful for peo
 working on the service to not modify data in production than to keep users out.
 GOV.UK publishing apps do this, for example compare GOV.UK Signon in their
 [Staging](https://signon.staging.publishing.service.gov.uk) and [Production]
-(https://signon.publishing.service.gov.uk) environments.
+(<https://signon.publishing.service.gov.uk>) environments.
 
 ## Welsh language versions of sites and domain naming
 
@@ -124,13 +124,13 @@ You should use a `.gov.uk` subdomain, as above, for these reasons:
   is not renewed, it can be bought by a squatter and used for phishing and
   scams
 - The Service Manual says [not to use the crown, New Transport font etc]
-  (https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk)
+  (<https://www.gov.uk/service-manual/design/making-your-service-look-like-govuk#if-your-service-isnt-on-govuk>)
   if your service isn't on a `gov.uk` domain
 - Unfamiliar domains look untrustworthy, putting off users including internal
   staff from using the service
 - Normalizing the use of unfamiliar domains increases the risk of phishing
 - NCSC's [Takedown Service]
-  (https://www.ncsc.gov.uk/information/takedown-service) will likely take down
+  (<https://www.ncsc.gov.uk/information/takedown-service>) will likely take down
   the site if you're using GOV.UK Design System, the crown, New Transport font
   etc; and it's not on a .gov.uk domain
 - Google's anti-phishing protection could at any time flag a site as 'deceptive'
@@ -144,17 +144,17 @@ You should use a `.gov.uk` subdomain, as above, for these reasons:
 ### Exemptions (where you can use a non-`gov.uk` domain)
 
 The [GOV.UK Proposition]
-(https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition)
+(<https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition>)
 sets out an exemption criteria to use a non-`gov.uk` domain.
 
 If your service falls into [What does not go on GOV.UK]
-(https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition#what-does-not-go-on-govuk):
+(<https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition#what-does-not-go-on-govuk>):
 
 - follow the [GOV.UK exemptions]
-  (https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition#govuk-exemptions)
+  (<https://www.gov.uk/government/publications/govuk-proposition/govuk-proposition#govuk-exemptions>)
   guidance
 - [request an exemption]
-  (https://www.gov.uk/guidance/content-design/planning-content#getting-an-exemption)
+  (<https://www.gov.uk/guidance/content-design/planning-content#getting-an-exemption>)
   from GOV.UK
 - once approved, forward the approval to the [Operations Engineering team]
   (mailto:domains@digital.justice.gov.uk)
@@ -164,4 +164,27 @@ The Operations Engineering team will then:
 - work with you to register your domain
 - manage renewals for the domain
 - set up the domain to adhere to the [MOJ's Security Guidance]
-  (https://security-guidance.service.justice.gov.uk/#cyber-and-technical-security-guidance)
+  (<https://security-guidance.service.justice.gov.uk/#cyber-and-technical-security-guidance>)
+
+## Assessing Existing Domains
+
+If you already have a domain that you are using to provide Ministry of Justice Services and wondering if it is compliant with our standards, you can follow these steps assess the domain:
+
+- ✅ If the domain name ends with `gov.uk`, it is compliant with our standards. All domains with this Top Level Domain will have gone through the relevant checks and approvals before being created.
+- ✅ If the domain name does not end with `gov.uk`, [check if the domain is owned by the Ministry of Justice](#check-if-a-domain-is-owned-by-the-ministry-of-justice). After, [check if the domain is deprecated](#check-if-a-domain-is-deprecated). If the domain is owned by the Ministry of Justice and is not deprecated, then it is probably compliant with our standards. It still may be worth considering migrating the service to the `gov.uk` domain where appropriate - but this is not a requirement in all cases.
+
+### Check if a Domain is Owned by The Ministry of Justice
+
+You can check if the domain is owned by the Ministry of Justice by looking up the domain name in our public [DNS Repository](https://github.com/ministryofjustice/dns/blob/main/hostedzones). If the Second Level Domain is owned by the Ministry of Justice, there will be Hosted Zone file for the domain in the repository. If there is not a Hosted Zone file for the domain, it is not owned by the Ministry of Justice.
+
+> *Example*: If you have a domain called `testing.example.com`, you can look up the domain in the [DNS Repository](https://github.com/ministryofjustice/dns/blob/main/hostedzones) to see if there is a Hosted Zone file for `example.com` which should be called `example.com.yaml`.
+
+***‼️ If you are providing Ministry of Justice Services on a domain that is not owned by the Ministry of Justice, please contact the [Operations Engineering Team](mailto:domains@digital.justice.gov.uk) to discuss transferring the domain to the Ministry of Justice.***
+
+### Check if a Domain is Deprecated
+
+Deprecated domains may still serve Ministry of Justice Services, but we will no longer accept new requests to provision new services on the domain. If you have a domain that is deprecated, you should consider migrating the service to a `gov.uk` domain.
+
+Below is a list of deprecated domains:
+
+- `dsd.io`
