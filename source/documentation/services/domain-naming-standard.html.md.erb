@@ -168,22 +168,24 @@ The Operations Engineering team will then:
 
 ## Assessing Existing Domains
 
-If you already have a domain that you are using to provide Ministry of Justice Services and wondering if it is compliant with our standards, you can follow these steps assess the domain:
+If you already have a domain that you are using to provide Ministry of Justice Services, you can follow these steps assess the domain's compliance with our standards:
 
 - ✅ If the domain name ends with `gov.uk`, it is compliant with our standards. All domains with this Top Level Domain will have gone through the relevant checks and approvals before being created.
 - ✅ If the domain name does not end with `gov.uk`, [check if the domain is owned by the Ministry of Justice](#check-if-a-domain-is-owned-by-the-ministry-of-justice). After, [check if the domain is deprecated](#check-if-a-domain-is-deprecated). If the domain is owned by the Ministry of Justice and is not deprecated, then it is probably compliant with our standards. It still may be worth considering migrating the service to the `gov.uk` domain where appropriate - but this is not a requirement in all cases.
 
 ### Check if a Domain is Owned by The Ministry of Justice
 
-You can check if the domain is owned by the Ministry of Justice by looking up the domain name in our public [DNS Repository](https://github.com/ministryofjustice/dns/blob/main/hostedzones). If the Second Level Domain is owned by the Ministry of Justice, there will be Hosted Zone file for the domain in the repository. If there is not a Hosted Zone file for the domain, it is not owned by the Ministry of Justice.
+You can check if the domain is owned by the Ministry of Justice by looking up the domain name in our public [DNS Repository](https://github.com/ministryofjustice/dns/blob/main/hostedzones). If the Second Level Domain is owned by the Ministry of Justice, in most cases there will be Hosted Zone file for the domain in the repository.
 
 > *Example*: If you have a domain called `testing.example.com`, you can look up the domain in the [DNS Repository](https://github.com/ministryofjustice/dns/blob/main/hostedzones) to see if there is a Hosted Zone file for `example.com` which should be called `example.com.yaml`.
+
+If there is not a Hosted Zone file for the domain, the domain may still be owned by the Ministry of Justice. To verify if the domain is owned by the Ministry of Justice, contact the [Operations Engineering Team](mailto:domains@digital.justice.gov.uk) to confirm.
 
 ***‼️ If you are providing Ministry of Justice Services on a domain that is not owned by the Ministry of Justice, please contact the [Operations Engineering Team](mailto:domains@digital.justice.gov.uk) to discuss transferring the domain to the Ministry of Justice.***
 
 ### Check if a Domain is Deprecated
 
-Deprecated domains may still serve Ministry of Justice Services, but we will no longer accept new requests to provision new services on the domain. If you have a domain that is deprecated, you should consider migrating the service to a `gov.uk` domain.
+Deprecated domains may still serve Ministry of Justice Services, but we will no longer accept new requests to provision new services on the domain. If you run Ministry of Justice Services on a domain that is deprecated, you should consider migrating the service to a `gov.uk` domain.
 
 Below is a list of deprecated domains:
 
