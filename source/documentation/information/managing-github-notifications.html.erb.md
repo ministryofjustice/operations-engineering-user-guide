@@ -1,7 +1,7 @@
 ---
 owner_slack: "#operations-engineering-alerts"
 title: Managing GitHub Notifications
-last_reviewed_on: 2024-11-29
+last_reviewed_on: 2025-02-28
 review_in: 3 months
 ---
 
