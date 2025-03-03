@@ -1,11 +1,11 @@
 ---
 owner_slack: "#operations-engineering-alerts"
-title: OS Data Hub APIs
-last_reviewed_on: 2024-10-07
+title: OS Data Hub
+last_reviewed_on: 2025-03-03
 review_in: 6 months
 ---
 
-# OS Data Hub API's
+# OS Data Hub
 
 ## Overview
 
@@ -23,20 +23,25 @@ Here are the APIs that are available:
 * [OS NGD API – Tiles](https://osdatahub.os.uk/docs/ota/overview)
 * [OS Downloads API](https://osdatahub.os.uk/docs/downloads/overview)
 
-## Requesting an API Keys
+We provide access to the OS Datahub so that Teams can create and manage their API keys.
 
-If you require a key please contact #ask-operations-engineering slack channel or [operations-engineering@digital.justice.gov.uk](mailto:operations-engineering@digital.justice.gov.uk) with the following information:
+## Requesting access to OS Datahub
 
-* Name of the API service you wish to access
-* Business Area e.g. HMCTS
-* Service Name e.g. Apply for Probate Online
-* Environment Type e.g. Production
+Self [sign-up up to the Public Sector Plan](https://osdatahub.os.uk/plans). Cick on the "Sign-up Now" button and enter a work email address.
 
-You can request as many keys as you require i.e. you may want one per environment type.
+## Creating a Team Space to manage your API keys
 
-All keys issued offer the full functionality of the product, irrespective of whether it is for non-production or production purposes.
+After you have signed up to OS Datahub you should submit a request for a Team Space, or ask to be added to an existing Team Space. Contact #ask-operations-engineering slack channel or [operations-engineering@digital.justice.gov.uk](mailto:operations-engineering@digital.justice.gov.uk) with team name details. We recommend that Team Space names are in the format `<business-unit> <application>` e.g. `LAA CCMS`.
 
-Keys will be issued to the requestor via a secure method.
+## Creating API Keys
+
+You will be able to create you own API keys follow [OS Datahub documentation](https://osdatahub.os.uk/).
+
+We recommend the following when creating keys:
+- API keys have the naming convention `<business-unit> <application> <environment>` e.g. `LAA CCMS Development`
+- API key per environment i.e. dev, staging and prod
+
+When you have created your API key add it to your Team Space to ensure that access is limited to your Team. Any keys that are not managed within a Team Space can be seen by other users in the account.
 
 ## Cost of OS Places API
 
@@ -44,11 +49,11 @@ There is no cost to service teams for use of the service. The MoJ is part of the
 
 ## Revoking Keys
 
-If an API key is no longer required please contact #ask-operations-engineering slack channel or [operations-engineering@digital.justice.gov.uk](mailto:operations-engineering@digital.justice.gov.uk) for the key to be revoked.
+If an API key is no longer required you can delete a key via your Team Space.
 
 ## What if my key gets exposed?
 
-OS Data Hub API keys should be treated like any secret/credential. If exposed please contact #ask-operations-engineering slack channel or [operations-engineering@digital.justice.gov.uk](mailto:operations-engineering@digital.justice.gov.uk) immediately for the key to be revoked and a replacement issued.
+OS Data Hub API keys should be treated like any secret/credential. If exposed you can recycle your key via your Team Space.
 
 Whilst the API provides data that is already in the public domain, there is the potential for financial risk to the Ministry of Justice should a key be misused.
 
